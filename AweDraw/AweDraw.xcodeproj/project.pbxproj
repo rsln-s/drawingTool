@@ -13,6 +13,9 @@
 		442AFA861AF27DFD00503B12 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 442AFA851AF27DFD00503B12 /* Images.xcassets */; };
 		442AFA891AF27DFD00503B12 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 442AFA871AF27DFD00503B12 /* LaunchScreen.xib */; };
 		442AFA951AF27DFD00503B12 /* AweDrawTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442AFA941AF27DFD00503B12 /* AweDrawTests.swift */; };
+		442AFAA11AF2872900503B12 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442AFAA01AF2872900503B12 /* DrawView.swift */; };
+		442AFAA31AF2879800503B12 /* CurrentDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442AFAA21AF2879800503B12 /* CurrentDrawing.swift */; };
+		442AFAA51AF28BFD00503B12 /* EntireDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442AFAA41AF28BFC00503B12 /* EntireDrawing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		442AFA8E1AF27DFD00503B12 /* AweDrawTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AweDrawTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		442AFA931AF27DFD00503B12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		442AFA941AF27DFD00503B12 /* AweDrawTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AweDrawTests.swift; sourceTree = "<group>"; };
+		442AFAA01AF2872900503B12 /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
+		442AFAA21AF2879800503B12 /* CurrentDrawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentDrawing.swift; sourceTree = "<group>"; };
+		442AFAA41AF28BFC00503B12 /* EntireDrawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntireDrawing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,9 @@
 		442AFA7B1AF27DFD00503B12 /* AweDraw */ = {
 			isa = PBXGroup;
 			children = (
+				442AFAA01AF2872900503B12 /* DrawView.swift */,
+				442AFAA21AF2879800503B12 /* CurrentDrawing.swift */,
+				442AFAA41AF28BFC00503B12 /* EntireDrawing.swift */,
 				442AFA7E1AF27DFD00503B12 /* AppDelegate.swift */,
 				442AFA801AF27DFD00503B12 /* ViewController.swift */,
 				442AFA821AF27DFD00503B12 /* Main.storyboard */,
@@ -213,7 +222,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				442AFA811AF27DFD00503B12 /* ViewController.swift in Sources */,
+				442AFAA51AF28BFD00503B12 /* EntireDrawing.swift in Sources */,
 				442AFA7F1AF27DFD00503B12 /* AppDelegate.swift in Sources */,
+				442AFAA31AF2879800503B12 /* CurrentDrawing.swift in Sources */,
+				442AFAA11AF2872900503B12 /* DrawView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

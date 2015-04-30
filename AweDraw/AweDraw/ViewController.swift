@@ -10,6 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var myDrawView: UIView!
+    @IBOutlet weak var myToolsView: UIView!
+    
+
+    @IBAction func tapHappened(sender: AnyObject) {
+        myToolsView.frame.origin.x -= 100
+        myDrawView.alpha = 0.9
+        println("swipe happened")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
