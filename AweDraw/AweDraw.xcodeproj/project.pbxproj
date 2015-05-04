@@ -423,6 +423,7 @@
 				442AFA9A1AF27DFD00503B12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		442AFA9B1AF27DFD00503B12 /* Build configuration list for PBXNativeTarget "AweDrawTests" */ = {
 			isa = XCConfigurationList;
@@ -431,6 +432,7 @@
 				442AFA9D1AF27DFD00503B12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

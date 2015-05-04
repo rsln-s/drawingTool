@@ -10,13 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var toolsIsShowing : Bool = false
+    
     @IBOutlet weak var myDrawView: UIView!
     @IBOutlet weak var myToolsView: UIView!
     
 
     @IBAction func tapHappened(sender: AnyObject) {
-        myToolsView.frame.origin.x -= 100
-        myDrawView.alpha = 0.9
+        if ( toolsIsShowing){
+            toolsIsShowing = false
+            myToolsView.frame.origin.x = CGFloat(-1000)
+        }else{
+            toolsIsShowing = true
+            myToolsView.frame.origin.x = CGFloat(0.0)
+        }
+        
         println("swipe happened")
     }
     override func viewDidLoad() {
