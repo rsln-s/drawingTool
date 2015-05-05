@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -24,6 +24,7 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="cER-qg-Cv2" appends="YES" id="F2M-Dz-981"/>
+                                    <outletCollection property="gestureRecognizers" destination="TIg-Sp-JS2" appends="YES" id="aMj-5g-ezq"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FsV-G9-jsD" userLabel="toolsView">
@@ -101,6 +102,7 @@
                     <connections>
                         <outlet property="myDrawView" destination="XEH-Pr-Wwf" id="ayf-Gc-fcW"/>
                         <outlet property="myToolsView" destination="FsV-G9-jsD" id="9EH-G6-QCB"/>
+                        <outlet property="panRecogniser" destination="TIg-Sp-JS2" id="3CD-eg-HzN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -109,6 +111,11 @@
                         <action selector="tapHappened:" destination="BYZ-38-t0r" id="HCx-sl-oSj"/>
                     </connections>
                 </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="TIg-Sp-JS2">
+                    <connections>
+                        <action selector="panHappened:" destination="BYZ-38-t0r" id="q0N-gg-Yla"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="139" y="388"/>
         </scene>
