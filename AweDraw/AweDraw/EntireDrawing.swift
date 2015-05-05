@@ -8,6 +8,15 @@
 
 import UIKit
 
+var history:EntireDrawing?
+
 class EntireDrawing: NSObject {
-    var drawingHistory:[CurrentDrawing]?
+    var drawingHistory:[CurrentDrawing] = []
+    
+    class func sharedHistory() -> EntireDrawing {
+        if (history == nil) {
+            history = EntireDrawing()
+        }
+        return history!
+    }
 }

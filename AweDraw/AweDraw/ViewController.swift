@@ -14,9 +14,32 @@ class ViewController: UIViewController {
     }
     var toolsIsShowing : Bool = false
     
-    @IBOutlet weak var myDrawView: UIView!
-    @IBOutlet weak var myToolsView: UIView!
+//    var myDrawing = EntireDrawing()
     
+    @IBOutlet weak var myDrawView: DrawView!
+    @IBOutlet weak var myToolsView: UIView!
+    @IBOutlet var panRecogniser: UIPanGestureRecognizer!
+    
+    @IBAction func panHappened(recogniser: UIPanGestureRecognizer) {
+        var startingPoint = recogniser.locationInView(self.view)
+        if self.myDrawView.currentStroke.currentPoint == nil {
+            self.myDrawView.currentStroke.path.moveToPoint(startingPoint)
+            self.myDrawView.currentStroke.currentPoint = startingPoint
+        }
+        let translation = recogniser.translationInView(self.view)
+        self.myDrawView.currentStroke.currentPoint = self.myDrawView.currentStroke.currentPoint! + translation
+        self.myDrawView.currentStroke.path.addLineToPoint(startingPoint)
+        if recogniser.state == UIGestureRecognizerState.Ended {
+            EntireDrawing.sharedHistory().drawingHistory.append(self.myDrawView.currentStroke)
+            self.myDrawView.deleteCurrentStroke()
+        }else{
+            if EntireDrawing.sharedHistory().drawingHistory.count >= 1{
+                EntireDrawing.sharedHistory().drawingHistory.removeLast()
+            }
+            EntireDrawing.sharedHistory().drawingHistory.append(self.myDrawView.currentStroke)
+        }
+        self.myDrawView.setNeedsDisplay()
+    }
 
     @IBAction func tapHappened(sender: AnyObject) {
         if ( toolsIsShowing){
@@ -29,11 +52,12 @@ class ViewController: UIViewController {
         
         println("swipe happened")
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.panRecogniser.maximumNumberOfTouches = 1
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let destination = sender?.destinationViewController as? ColorSelector{
             destination.currentColor = UIColor.whiteColor()
