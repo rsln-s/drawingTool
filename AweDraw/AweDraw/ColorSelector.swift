@@ -13,6 +13,14 @@ struct ColorSelectorHelper{
     var red : CGFloat = 1.0
     var green : CGFloat = 1.0
     var blue : CGFloat = 1.0
+    var currentColor : UIColor {
+        get{
+            return UIColor(red: colorSelectorHelper.red, green: colorSelectorHelper.green, blue: colorSelectorHelper.blue, alpha: CGFloat(1.0))
+        }
+        set{
+            
+        }
+    }
 }
 
 var colorSelectorHelper = ColorSelectorHelper()
@@ -32,7 +40,7 @@ class ColorSelector: UIViewController {
     }
     
     func updateColor(){
-        self.view.backgroundColor = UIColor(red: colorSelectorHelper.red, green: colorSelectorHelper.green, blue: colorSelectorHelper.blue, alpha: CGFloat(1.0))
+        self.view.backgroundColor = colorSelectorHelper.currentColor
     }
     func updateSliders(){
         self.redSlider.value = Float(colorSelectorHelper.red * 255)
