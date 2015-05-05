@@ -13,14 +13,6 @@ struct ColorSelectorHelper{
     var red : CGFloat = 1.0
     var green : CGFloat = 1.0
     var blue : CGFloat = 1.0
-    var currentColor : UIColor {
-        get{
-            return UIColor(red: colorSelectorHelper.red, green: colorSelectorHelper.green, blue: colorSelectorHelper.blue, alpha: CGFloat(1.0))
-        }
-        set{
-            
-        }
-    }
 }
 
 var colorSelectorHelper = ColorSelectorHelper()
@@ -32,16 +24,19 @@ class ColorSelector: UIViewController {
     
     @IBOutlet weak var blueSlider: UISlider!
     
+    @IBOutlet weak var defaultColors: UIView!
     @IBAction func colorChangedSliderAction(sender: UISlider) {
         colorSelectorHelper.red = CGFloat(self.redSlider.value/255.0)
         colorSelectorHelper.green = CGFloat(self.greenSlider.value/255.0)
         colorSelectorHelper.blue = CGFloat(self.blueSlider.value/255.0)
         updateColor()
     }
-    
-    func updateColor(){
-        self.view.backgroundColor = colorSelectorHelper.currentColor
+
+    @IBAction func setColorByButton(sender: UIButton) {
+        self.view.backgroundColor = sender.backgroundColor
     }
+    func updateColor(){
+        self.view.backgroundColor = UIColor(red: colorSelectorHelper.red, green: colorSelectorHelper.green, blue: colorSelectorHelper.blue, alpha: CGFloat(1.0))    }
     func updateSliders(){
         self.redSlider.value = Float(colorSelectorHelper.red * 255)
         self.greenSlider.value = Float(colorSelectorHelper.green * 255)
@@ -52,6 +47,11 @@ class ColorSelector: UIViewController {
         super.viewWillAppear(animated)
         updateSliders()
         updateColor()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        viewWillDisappear(animated)
+        EntireDrawing.sharedHistory().currentColor = self.view.backgroundColor ?? UIColor.whiteColor()
     }
    
 
