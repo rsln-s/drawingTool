@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBAction func changeColorBtnClicked(sender: UIButton) {
+    }
     var toolsIsShowing : Bool = false
     
     @IBOutlet weak var myDrawView: UIView!
@@ -32,9 +34,10 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let destination = sender?.destinationViewController as? ColorSelector{
+            destination.currentColor = UIColor.whiteColor()
+        }
     }
 
 
