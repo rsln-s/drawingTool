@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     }
     var toolsIsShowing : Bool = false
     
-    var myDrawing = EntireDrawing()
+//    var myDrawing = EntireDrawing()
     
     @IBOutlet weak var myDrawView: DrawView!
     @IBOutlet weak var myToolsView: UIView!
@@ -29,11 +29,16 @@ class ViewController: UIViewController {
         let translation = recogniser.translationInView(self.view)
         self.myDrawView.currentStroke.currentPoint = self.myDrawView.currentStroke.currentPoint! + translation
         self.myDrawView.currentStroke.path.addLineToPoint(startingPoint)
-        self.myDrawView.setNeedsDisplay()
         if recogniser.state == UIGestureRecognizerState.Ended {
-            self.myDrawing.drawingHistory?.append(self.myDrawView.currentStroke)
-            self.myDrawView.currentStroke.currentPoint = nil
+            EntireDrawing.sharedHistory().drawingHistory.append(self.myDrawView.currentStroke)
+            self.myDrawView.deleteCurrentStroke()
+        }else{
+            if EntireDrawing.sharedHistory().drawingHistory.count >= 1{
+                EntireDrawing.sharedHistory().drawingHistory.removeLast()
+            }
+            EntireDrawing.sharedHistory().drawingHistory.append(self.myDrawView.currentStroke)
         }
+        self.myDrawView.setNeedsDisplay()
     }
 
     @IBAction func tapHappened(sender: AnyObject) {

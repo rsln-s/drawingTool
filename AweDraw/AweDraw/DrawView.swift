@@ -10,17 +10,17 @@ import UIKit
 
 class DrawView: UIView {
     
-    var entireDrawing:EntireDrawing = EntireDrawing()
     var currentStroke:CurrentDrawing = CurrentDrawing()
     
     func deleteCurrentStroke(){
         self.currentStroke = CurrentDrawing()
     }
     
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
-        self.currentStroke.path.stroke()
+        let tmpHistory = EntireDrawing.sharedHistory().drawingHistory
+        for stroke in tmpHistory{
+            stroke.path.stroke()
+        }
     }
 
 }
