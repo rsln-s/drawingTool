@@ -9,16 +9,22 @@
 import UIKit
 
 class DrawView: UIView {
-    
     var currentStroke:CurrentDrawing = CurrentDrawing()
     
     func deleteCurrentStroke(){
         self.currentStroke = CurrentDrawing()
     }
     
+    func cancelLastStroke(){
+        EntireDrawing.sharedHistory().drawingHistory.removeLast()
+        self.setNeedsDisplay()
+    }
+    
     override func drawRect(rect: CGRect) {
         let tmpHistory = EntireDrawing.sharedHistory().drawingHistory
         for stroke in tmpHistory{
+            stroke.color.setStroke()
+            stroke.path.lineWidth = stroke.lineWidth
             stroke.path.stroke()
         }
     }

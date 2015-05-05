@@ -17,7 +17,7 @@ func +(lhs: CGPoint, rhs:CGPoint) -> CGPoint{
 
 class CurrentDrawing: NSObject {
     var color:UIColor = UIColor.blackColor()
-    var lineWidth:CGFloat = 1.0
+    var lineWidth:CGFloat = 10.0
     var path:UIBezierPath = UIBezierPath()
     var currentPoint:CGPoint?
 }
