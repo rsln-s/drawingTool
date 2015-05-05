@@ -50,7 +50,7 @@ class ColorSelector: UIViewController {
     }
     
     override func viewWillDisappear(animated: Bool) {
-        viewWillDisappear(animated)
+        super.viewWillDisappear(animated)
         EntireDrawing.sharedHistory().currentColor = self.view.backgroundColor ?? UIColor.whiteColor()
     }
    
