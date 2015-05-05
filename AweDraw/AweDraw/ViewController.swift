@@ -58,11 +58,10 @@ class ViewController: UIViewController {
         self.panRecogniser.maximumNumberOfTouches = 1
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let destination = sender?.destinationViewController as? ColorSelector{
-            destination.currentColor = UIColor.whiteColor()
-        }
-    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if let destination = sender?.destinationViewController as? ColorSelector{
+//        }
+//    }
 
 
 }
