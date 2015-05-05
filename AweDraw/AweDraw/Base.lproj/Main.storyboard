@@ -56,7 +56,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="changeColorBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7gs-Zm-HMO"/>
-                                                    <segue destination="kWs-Ne-MxK" kind="popoverPresentation" popoverAnchorView="uEN-UF-c2p" id="OHe-NC-EGb">
+                                                    <segue destination="kWs-Ne-MxK" kind="popoverPresentation" popoverAnchorView="uEN-UF-c2p" id="fGe-ob-bgs">
                                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                                     </segue>
                                                 </connections>
@@ -112,22 +112,22 @@
             </objects>
             <point key="canvasLocation" x="139" y="388"/>
         </scene>
-        <!--View Controller-->
+        <!--Color Selector-->
         <scene sceneID="v7B-nt-jhs">
             <objects>
-                <viewController id="kWs-Ne-MxK" sceneMemberID="viewController">
+                <viewController id="kWs-Ne-MxK" customClass="ColorSelector" customModule="AweDraw" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="31o-rw-Edr"/>
                         <viewControllerLayoutGuide type="bottom" id="Y9j-vk-Hw0"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GwY-Dg-IYD" customClass="ColorSelector" customModule="AweDraw" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="GwY-Dg-IYD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="l21-mp-wgn" userLabel="RedSlider">
                                 <rect key="frame" x="69" y="24" width="517" height="31"/>
                                 <connections>
-                                    <action selector="colorChangedSliderAction:" destination="GwY-Dg-IYD" eventType="valueChanged" id="r22-ij-AV5"/>
+                                    <action selector="colorChangedSliderAction:" destination="kWs-Ne-MxK" eventType="valueChanged" id="iNQ-6j-ll6"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouL-ZZ-7U0">
@@ -151,36 +151,33 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="9qQ-yh-IDW" userLabel="GreenSlider">
                                 <rect key="frame" x="69" y="53" width="517" height="31"/>
                                 <connections>
-                                    <action selector="colorChangedSliderAction:" destination="GwY-Dg-IYD" eventType="valueChanged" id="gvz-c8-kbA"/>
+                                    <action selector="colorChangedSliderAction:" destination="kWs-Ne-MxK" eventType="valueChanged" id="D12-Tc-YMe"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="eMF-rH-BaJ" userLabel="BlueSlider">
                                 <rect key="frame" x="69" y="82" width="517" height="31"/>
                                 <connections>
-                                    <action selector="colorChangedSliderAction:" destination="GwY-Dg-IYD" eventType="valueChanged" id="fSa-CO-Fv9"/>
+                                    <action selector="colorChangedSliderAction:" destination="kWs-Ne-MxK" eventType="valueChanged" id="5Rk-uo-7Xt"/>
                                 </connections>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZw-UF-9Pn">
-                                <rect key="frame" x="16" y="115" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3C-wn-Ig9">
+                                <rect key="frame" x="16" y="115" width="46" height="30"/>
                                 <state key="normal" title="Ok">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="lhN-ER-Eya"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="udf-Pn-ZtF"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9qQ-yh-IDW" firstAttribute="width" secondItem="l21-mp-wgn" secondAttribute="width" id="0uY-dR-IhH"/>
-                            <constraint firstItem="xZw-UF-9Pn" firstAttribute="leading" secondItem="GwY-Dg-IYD" secondAttribute="leadingMargin" id="1Jb-wI-exY"/>
                             <constraint firstItem="ouL-ZZ-7U0" firstAttribute="top" secondItem="31o-rw-Edr" secondAttribute="bottom" constant="8" symbolic="YES" id="4Ff-H3-SHM"/>
-                            <constraint firstItem="jF6-Q8-j1f" firstAttribute="leading" secondItem="xZw-UF-9Pn" secondAttribute="leading" id="79P-w9-Xq9"/>
                             <constraint firstItem="jF6-Q8-j1f" firstAttribute="leading" secondItem="ouL-ZZ-7U0" secondAttribute="leading" id="Ako-Fb-q7O"/>
                             <constraint firstItem="ouL-ZZ-7U0" firstAttribute="leading" secondItem="GwY-Dg-IYD" secondAttribute="leadingMargin" id="BZ8-QQ-RM9"/>
                             <constraint firstItem="a2p-HQ-jiT" firstAttribute="top" secondItem="ouL-ZZ-7U0" secondAttribute="bottom" constant="8" symbolic="YES" id="ESS-X0-QMr"/>
                             <constraint firstItem="eMF-rH-BaJ" firstAttribute="leading" secondItem="jF6-Q8-j1f" secondAttribute="trailing" constant="8" symbolic="YES" id="Ed2-OH-Mzb"/>
-                            <constraint firstItem="xZw-UF-9Pn" firstAttribute="top" secondItem="jF6-Q8-j1f" secondAttribute="bottom" constant="8" symbolic="YES" id="IjE-FK-tRR"/>
                             <constraint firstItem="l21-mp-wgn" firstAttribute="leading" secondItem="ouL-ZZ-7U0" secondAttribute="trailing" constant="8" symbolic="YES" id="In5-nP-JZW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eMF-rH-BaJ" secondAttribute="trailing" id="LXc-V5-YHg"/>
                             <constraint firstItem="a2p-HQ-jiT" firstAttribute="leading" secondItem="ouL-ZZ-7U0" secondAttribute="leading" id="Tw4-Gl-hpG"/>
@@ -193,16 +190,16 @@
                             <constraint firstItem="eMF-rH-BaJ" firstAttribute="width" secondItem="l21-mp-wgn" secondAttribute="width" id="vxZ-rg-XYY"/>
                             <constraint firstItem="ouL-ZZ-7U0" firstAttribute="centerY" secondItem="l21-mp-wgn" secondAttribute="centerY" id="zlt-tN-d4T"/>
                         </constraints>
-                        <connections>
-                            <outlet property="blueSlider" destination="eMF-rH-BaJ" id="qcX-9g-DOi"/>
-                            <outlet property="greenSlider" destination="9qQ-yh-IDW" id="I0L-vh-iwe"/>
-                            <outlet property="redSlider" destination="l21-mp-wgn" id="j8C-SP-dj2"/>
-                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="blueSlider" destination="eMF-rH-BaJ" id="I7N-64-0bC"/>
+                        <outlet property="greenSlider" destination="9qQ-yh-IDW" id="tBH-Hd-v9d"/>
+                        <outlet property="redSlider" destination="l21-mp-wgn" id="EOh-P4-DTx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRt-Pp-647" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="910" y="404"/>
+            <point key="canvasLocation" x="848" y="503"/>
         </scene>
     </scenes>
 </document>
