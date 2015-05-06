@@ -19,6 +19,8 @@ class DrawView: UIView {
     override func drawRect(rect: CGRect) {
         let tmpHistory = EntireDrawing.sharedHistory().drawingHistory
         for stroke in tmpHistory{
+            stroke.color.setStroke()
+            stroke.path.lineWidth = stroke.lineWidth
             stroke.path.stroke()
         }
     }

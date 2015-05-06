@@ -33,9 +33,11 @@ class ViewController: UIViewController {
     
     @IBAction func panHappened(recogniser: UIPanGestureRecognizer) {
         var startingPoint = recogniser.locationInView(self.view)
-        if self.myDrawView.currentStroke.currentPoint == nil {
+        if recogniser.state == UIGestureRecognizerState.Began{
             self.myDrawView.currentStroke.path.moveToPoint(startingPoint)
             self.myDrawView.currentStroke.currentPoint = startingPoint
+            self.myDrawView.currentStroke.color = EntireDrawing.sharedHistory().currentColor
+            self.myDrawView.currentStroke.lineWidth = EntireDrawing.sharedHistory().currentLineSize
         }
         let translation = recogniser.translationInView(self.view)
         self.myDrawView.currentStroke.currentPoint = self.myDrawView.currentStroke.currentPoint! + translation
