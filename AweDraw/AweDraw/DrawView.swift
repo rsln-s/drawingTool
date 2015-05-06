@@ -11,7 +11,11 @@ import UIKit
 class DrawView: UIView {
     
     var currentStroke:CurrentDrawing = CurrentDrawing()
-        
+    
+    func deleteCurrentStroke(){
+        self.currentStroke = CurrentDrawing()
+    }
+    
     override func drawRect(rect: CGRect) {
         let tmpHistory = EntireDrawing.sharedHistory().drawingHistory
         for stroke in tmpHistory{
