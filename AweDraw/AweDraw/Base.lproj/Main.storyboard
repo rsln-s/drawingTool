@@ -45,6 +45,12 @@
                                             <constraint firstAttribute="centerX" secondItem="FjG-Dm-a5e" secondAttribute="centerX" id="Eqj-Nv-gNA"/>
                                             <constraint firstAttribute="bottom" secondItem="FjG-Dm-a5e" secondAttribute="bottom" constant="20" symbolic="YES" id="gR2-A1-S5T"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6c6-EF-MQs" userLabel="colorSelectingView">
                                         <rect key="frame" x="0.0" y="20" width="180" height="181"/>
@@ -66,12 +72,18 @@
                                             <constraint firstAttribute="centerX" secondItem="uEN-UF-c2p" secondAttribute="centerX" id="40g-ch-7xx"/>
                                             <constraint firstAttribute="centerY" secondItem="uEN-UF-c2p" secondAttribute="centerY" id="8ib-aj-T4A"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9E-Bu-hEW" userLabel="cancel">
                                         <rect key="frame" x="0.0" y="399" width="180" height="181"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cl-Wg-QZJ">
-                                                <rect key="frame" x="66" y="75" width="48" height="30"/>
+                                                <rect key="frame" x="66" y="76" width="48" height="30"/>
                                                 <state key="normal" title="Cancel">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -82,9 +94,15 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="centerX" secondItem="5cl-Wg-QZJ" secondAttribute="centerX" id="H3e-9d-Ljz"/>
-                                            <constraint firstAttribute="centerY" secondItem="5cl-Wg-QZJ" secondAttribute="centerY" id="XBD-ug-fuA"/>
+                                            <constraint firstAttribute="centerX" secondItem="5cl-Wg-QZJ" secondAttribute="centerX" id="jNb-JD-Odv"/>
+                                            <constraint firstAttribute="centerY" secondItem="5cl-Wg-QZJ" secondAttribute="centerY" constant="-0.5" id="lmr-aX-YHC"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <constraints>

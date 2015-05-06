@@ -58,10 +58,17 @@ class ViewController: UIViewController {
     @IBAction func tapHappened(sender: AnyObject) {
         if ( toolsIsShowing){
             toolsIsShowing = false
-            myToolsView.frame.origin.x = CGFloat(-1000)
+            UIView.animateWithDuration(0.1, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+                self.myToolsView.frame.origin.x = CGFloat(-self.myToolsView.frame.width)
+                //self.view.layoutIfNeeded()
+                }, completion: nil)
+        
         }else{
             toolsIsShowing = true
-            myToolsView.frame.origin.x = CGFloat(0.0)
+            UIView.animateWithDuration(0.1, delay: 0.0, options:           UIViewAnimationOptions.CurveEaseOut, animations: {
+                self.myToolsView.frame.origin.x = CGFloat(0)
+                //self.view.layoutIfNeeded()
+            }, completion: nil)
         }
         
         println("swipe happened")
