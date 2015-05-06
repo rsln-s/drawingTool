@@ -27,6 +27,9 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func cancelButtonPressed(sender: UIButton) {
+        
+    }
     
     
     
