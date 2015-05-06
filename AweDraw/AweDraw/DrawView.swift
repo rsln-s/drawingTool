@@ -12,9 +12,27 @@ class DrawView: UIView {
     
     var currentStroke:CurrentDrawing = CurrentDrawing()
     
-    func deleteCurrentStroke(){
-        self.currentStroke = CurrentDrawing()
-    }
+    
+        func deleteCurrentStroke(){
+            self.currentStroke = CurrentDrawing()
+        }
+    
+    
+//    func deleteCurrentStroke(){
+//        self.currentStroke = CurrentDrawing()
+//        self.layer.renderInContext(UIGraphicsGetCurrentContext())
+//        UIGraphicsGetImageFromCurrentImageContext().drawInRect(CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) )
+//        var outputImage = UIGraphicsGetImageFromCurrentImageContext();
+//        UIGraphicsEndImageContext();
+//        //UIImageWriteToSavedPhotosAlbum(outputImage, self,@selector(image:didFinishSavingWithError:contextInfo:), nil);
+//        UIImageWriteToSavedPhotosAlbum(outputImage, self, Selector("image:didFinishSavingWithError:contextInfo:"), nil)
+//    }
+//    
+//    func image(image: UIImage, didFinishSavingWithError error: NSErrorPointer, contextInfo: UnsafePointer<()>) {
+//        dispatch_async(dispatch_get_main_queue(), {
+//            UIAlertView(title: "Success", message: "This image has been saved to your Camera Roll successfully", delegate: nil, cancelButtonTitle: "Close").show()
+//        })
+//    }
     
     override func drawRect(rect: CGRect) {
         let tmpHistory = EntireDrawing.sharedHistory().drawingHistory
