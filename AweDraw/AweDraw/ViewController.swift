@@ -27,7 +27,12 @@ class ViewController: UIViewController {
         
     }
     
-    
+    func cancelLastStroke(){
+        if EntireDrawing.sharedHistory().drawingHistory.count >= 1 {
+            EntireDrawing.sharedHistory().drawingHistory.removeLast()
+        }
+        self.myDrawView.setNeedsDisplay()
+    }
     
     
     
