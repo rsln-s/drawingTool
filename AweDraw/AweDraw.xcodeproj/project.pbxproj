@@ -16,6 +16,7 @@
 		442AFAA11AF2872900503B12 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442AFAA01AF2872900503B12 /* DrawView.swift */; };
 		442AFAA31AF2879800503B12 /* CurrentDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442AFAA21AF2879800503B12 /* CurrentDrawing.swift */; };
 		442AFAA51AF28BFD00503B12 /* EntireDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442AFAA41AF28BFC00503B12 /* EntireDrawing.swift */; };
+		44DF2A9C1AFA3B0A00999153 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DF2A9B1AFA3B0A00999153 /* BackgroundView.swift */; };
 		84ABC8601AF7EF5600DB50F6 /* ColorSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ABC85F1AF7EF5600DB50F6 /* ColorSelector.swift */; };
 		84C6388C1AF9FCB1007212FE /* SizeLinePresenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6388B1AF9FCB1007212FE /* SizeLinePresenterView.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		442AFAA01AF2872900503B12 /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		442AFAA21AF2879800503B12 /* CurrentDrawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentDrawing.swift; sourceTree = "<group>"; };
 		442AFAA41AF28BFC00503B12 /* EntireDrawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntireDrawing.swift; sourceTree = "<group>"; };
+		44DF2A9B1AFA3B0A00999153 /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		84ABC85F1AF7EF5600DB50F6 /* ColorSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSelector.swift; sourceTree = "<group>"; };
 		84C6388B1AF9FCB1007212FE /* SizeLinePresenterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeLinePresenterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +97,7 @@
 				84C6388B1AF9FCB1007212FE /* SizeLinePresenterView.swift */,
 				442AFA801AF27DFD00503B12 /* ViewController.swift */,
 				442AFA821AF27DFD00503B12 /* Main.storyboard */,
+				44DF2A9B1AFA3B0A00999153 /* BackgroundView.swift */,
 				442AFA851AF27DFD00503B12 /* Images.xcassets */,
 				442AFA871AF27DFD00503B12 /* LaunchScreen.xib */,
 				442AFA7C1AF27DFD00503B12 /* Supporting Files */,
@@ -229,6 +232,7 @@
 			files = (
 				442AFA811AF27DFD00503B12 /* ViewController.swift in Sources */,
 				442AFAA51AF28BFD00503B12 /* EntireDrawing.swift in Sources */,
+				44DF2A9C1AFA3B0A00999153 /* BackgroundView.swift in Sources */,
 				442AFA7F1AF27DFD00503B12 /* AppDelegate.swift in Sources */,
 				442AFAA31AF2879800503B12 /* CurrentDrawing.swift in Sources */,
 				84ABC8601AF7EF5600DB50F6 /* ColorSelector.swift in Sources */,

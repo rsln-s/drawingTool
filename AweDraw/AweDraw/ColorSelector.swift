@@ -53,6 +53,4 @@ class ColorSelector: UIViewController {
         super.viewWillDisappear(animated)
         EntireDrawing.sharedHistory().currentColor = self.view.backgroundColor ?? UIColor.whiteColor()
     }
-   
-
 }

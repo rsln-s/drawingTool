@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     
 //    var myDrawing = EntireDrawing()
     
+    @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var lineSizePresenterView: UIView!
     @IBOutlet weak var myDrawView: DrawView!
     @IBOutlet weak var myToolsView: UIView!
@@ -23,6 +24,7 @@ class ViewController: UIViewController {
     
     @IBAction func lineSizeValueChanged(sender: UIStepper) {
         EntireDrawing.sharedHistory().currentLineSize = CGFloat(sender.value)
+        println("\(sender.value)")
         lineSizePresenterView.setNeedsDisplay()
         
     }
@@ -45,11 +47,7 @@ class ViewController: UIViewController {
         if recogniser.state == UIGestureRecognizerState.Ended {
             EntireDrawing.sharedHistory().drawingHistory.append(self.myDrawView.currentStroke)
             self.myDrawView.deleteCurrentStroke()
-        }else{
-            if EntireDrawing.sharedHistory().drawingHistory.count >= 1{
-                EntireDrawing.sharedHistory().drawingHistory.removeLast()
-            }
-            EntireDrawing.sharedHistory().drawingHistory.append(self.myDrawView.currentStroke)
+            self.backgroundView.setNeedsDisplay()
         }
         self.myDrawView.setNeedsDisplay()
     }
