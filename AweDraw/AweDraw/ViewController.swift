@@ -10,8 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBAction func changeColorBtnClicked(sender: UIButton) {
-    }
     var toolsIsShowing : Bool = false
     
 //    var myDrawing = EntireDrawing()

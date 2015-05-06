@@ -10,9 +10,9 @@ import UIKit
 
 struct ColorSelectorHelper{
     static let NSDictionaryCurrentColorKey = "currentColorKey"
-    var red : CGFloat = 1.0
-    var green : CGFloat = 1.0
-    var blue : CGFloat = 1.0
+    var red : CGFloat = 0
+    var green : CGFloat = 0
+    var blue : CGFloat = 0
 }
 
 var colorSelectorHelper = ColorSelectorHelper()
@@ -51,7 +51,7 @@ class ColorSelector: UIViewController {
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        EntireDrawing.sharedHistory().currentColor = self.view.backgroundColor ?? UIColor.whiteColor()
+        EntireDrawing.sharedHistory().currentColor = self.view.backgroundColor ?? UIColor.blackColor()
     }
    
 

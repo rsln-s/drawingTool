@@ -55,7 +55,6 @@
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="changeColorBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7gs-Zm-HMO"/>
                                                     <segue destination="kWs-Ne-MxK" kind="popoverPresentation" popoverAnchorView="uEN-UF-c2p" id="fGe-ob-bgs">
                                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                                     </segue>
