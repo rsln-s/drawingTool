@@ -16,9 +16,20 @@ class ViewController: UIViewController {
     
 //    var myDrawing = EntireDrawing()
     
+    @IBOutlet weak var lineSizePresenterView: UIView!
     @IBOutlet weak var myDrawView: DrawView!
     @IBOutlet weak var myToolsView: UIView!
     @IBOutlet var panRecogniser: UIPanGestureRecognizer!
+    
+    @IBAction func lineSizeValueChanged(sender: UIStepper) {
+        EntireDrawing.sharedHistory().currentLineSize = CGFloat(sender.value)
+        lineSizePresenterView.setNeedsDisplay()
+        
+    }
+    
+    
+    
+    
     
     @IBAction func panHappened(recogniser: UIPanGestureRecognizer) {
         var startingPoint = recogniser.locationInView(self.view)

@@ -30,11 +30,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FsV-G9-jsD" userLabel="toolsView">
                                 <rect key="frame" x="0.0" y="0.0" width="180" height="600"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2PX-2y-Jpc" userLabel="sizeSelectingView">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2PX-2y-Jpc" userLabel="sizeSelectingView" customClass="SizeLinePresenterView" customModule="AweDraw" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="209" width="180" height="182"/>
                                         <subviews>
-                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="FjG-Dm-a5e">
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="FjG-Dm-a5e">
                                                 <rect key="frame" x="43" y="133" width="94" height="29"/>
+                                                <connections>
+                                                    <action selector="lineSizeValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="iAR-5H-ezv"/>
+                                                </connections>
                                             </stepper>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -100,6 +103,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lineSizePresenterView" destination="2PX-2y-Jpc" id="rj1-TT-2xf"/>
                         <outlet property="myDrawView" destination="XEH-Pr-Wwf" id="ayf-Gc-fcW"/>
                         <outlet property="myToolsView" destination="FsV-G9-jsD" id="9EH-G6-QCB"/>
                         <outlet property="panRecogniser" destination="TIg-Sp-JS2" id="3CD-eg-HzN"/>

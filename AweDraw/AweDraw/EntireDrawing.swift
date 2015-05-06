@@ -13,7 +13,7 @@ var history:EntireDrawing?
 class EntireDrawing: NSObject {
     var drawingHistory:[CurrentDrawing] = []
     var currentColor:UIColor = UIColor.whiteColor()
-    
+    var currentLineSize:CGFloat = 1
     class func sharedHistory() -> EntireDrawing {
         if (history == nil) {
             history = EntireDrawing()
