@@ -26,12 +26,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func cancelButtonPressed(sender: UIButton) {
-        EntireDrawing.sharedHistory().drawingHistory.removeLast()
-        self.myDrawView.setNeedsDisplay()
+        if ( EntireDrawing.sharedHistory().drawingHistory.count >= 1){
+            EntireDrawing.sharedHistory().drawingHistory.removeLast()
+            self.myDrawView.setNeedsDisplay()
+        }
     }
-    
-    
-    
     
     @IBAction func panHappened(recogniser: UIPanGestureRecognizer) {
         var startingPoint = recogniser.locationInView(self.view)
@@ -47,11 +46,6 @@ class ViewController: UIViewController {
         if recogniser.state == UIGestureRecognizerState.Ended {
             EntireDrawing.sharedHistory().drawingHistory.append(self.myDrawView.currentStroke)
             self.myDrawView.deleteCurrentStroke()
-        }else{
-            if EntireDrawing.sharedHistory().drawingHistory.count >= 1{
-                EntireDrawing.sharedHistory().drawingHistory.removeLast()
-            }
-            EntireDrawing.sharedHistory().drawingHistory.append(self.myDrawView.currentStroke)
         }
         self.myDrawView.setNeedsDisplay()
     }
@@ -80,11 +74,5 @@ class ViewController: UIViewController {
         self.panRecogniser.maximumNumberOfTouches = 1
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if let destination = sender?.destinationViewController as? ColorSelector{
-//        }
-//    }
-
-
 }
 
