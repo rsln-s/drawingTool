@@ -24,9 +24,7 @@ class ViewController: UIViewController {
     
     @IBAction func lineSizeValueChanged(sender: UIStepper) {
         EntireDrawing.sharedHistory().currentLineSize = CGFloat(sender.value)
-        println("\(sender.value)")
         lineSizePresenterView.setNeedsDisplay()
-        
     }
     
     

@@ -95,7 +95,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="FsV-G9-jsD" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="AdY-Be-Rrj"/>
                             <constraint firstItem="FsV-G9-jsD" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.3" priority="50" id="FQ1-Qv-WGE"/>
