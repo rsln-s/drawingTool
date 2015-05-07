@@ -49,10 +49,18 @@ class ColorSelector: UIViewController {
         updateColor()
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        EntireDrawing.sharedHistory().currentColor = self.view.backgroundColor ?? UIColor.blackColor()
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let btn = sender as? UIButton{
+            if btn.titleLabel?.text == "Ok"{
+                EntireDrawing.sharedHistory().currentColor = self.view.backgroundColor ?? UIColor.blackColor()
+            }
+        }
     }
+    
+//    override func viewWillDisappear(animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        EntireDrawing.sharedHistory().currentColor = self.view.backgroundColor ?? UIColor.blackColor()
+//    }
    
 
 }

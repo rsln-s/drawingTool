@@ -30,28 +30,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FsV-G9-jsD" userLabel="toolsView">
                                 <rect key="frame" x="0.0" y="0.0" width="180" height="600"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2PX-2y-Jpc" userLabel="sizeSelectingView" customClass="SizeLinePresenterView" customModule="AweDraw" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="209" width="180" height="182"/>
-                                        <subviews>
-                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="FjG-Dm-a5e">
-                                                <rect key="frame" x="43" y="133" width="94" height="29"/>
-                                                <connections>
-                                                    <action selector="lineSizeValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="iAR-5H-ezv"/>
-                                                </connections>
-                                            </stepper>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="centerX" secondItem="FjG-Dm-a5e" secondAttribute="centerX" id="Eqj-Nv-gNA"/>
-                                            <constraint firstAttribute="bottom" secondItem="FjG-Dm-a5e" secondAttribute="bottom" constant="20" symbolic="YES" id="gR2-A1-S5T"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6c6-EF-MQs" userLabel="colorSelectingView">
                                         <rect key="frame" x="0.0" y="20" width="180" height="181"/>
                                         <subviews>
@@ -91,11 +69,44 @@
                                                     <action selector="cancelButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a7G-cR-GYb"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGv-4R-sY6">
+                                                <rect key="frame" x="72" y="114" width="37" height="30"/>
+                                                <state key="normal" title="Clear">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clearButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wuf-Ty-CRd"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="centerX" secondItem="5cl-Wg-QZJ" secondAttribute="centerX" id="jNb-JD-Odv"/>
-                                            <constraint firstAttribute="centerY" secondItem="5cl-Wg-QZJ" secondAttribute="centerY" constant="-0.5" id="lmr-aX-YHC"/>
+                                            <constraint firstAttribute="centerX" secondItem="5cl-Wg-QZJ" secondAttribute="centerX" id="HZV-Pm-7vM"/>
+                                            <constraint firstItem="eGv-4R-sY6" firstAttribute="top" secondItem="5cl-Wg-QZJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Xti-WR-PMK"/>
+                                            <constraint firstAttribute="centerX" secondItem="eGv-4R-sY6" secondAttribute="centerX" id="erq-19-xzH"/>
+                                            <constraint firstAttribute="centerY" secondItem="5cl-Wg-QZJ" secondAttribute="centerY" id="lmr-aX-YHC"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2PX-2y-Jpc" userLabel="sizeSelectingView" customClass="SizeLinePresenterView" customModule="AweDraw" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="209" width="180" height="182"/>
+                                        <subviews>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="FjG-Dm-a5e">
+                                                <rect key="frame" x="43" y="133" width="94" height="29"/>
+                                                <connections>
+                                                    <action selector="lineSizeValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="iAR-5H-ezv"/>
+                                                </connections>
+                                            </stepper>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="centerX" secondItem="FjG-Dm-a5e" secondAttribute="centerX" id="Eqj-Nv-gNA"/>
+                                            <constraint firstAttribute="bottom" secondItem="FjG-Dm-a5e" secondAttribute="bottom" constant="20" symbolic="YES" id="gR2-A1-S5T"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -176,21 +187,43 @@
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouL-ZZ-7U0">
                                 <rect key="frame" x="16" y="28" width="47" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2p-HQ-jiT">
                                 <rect key="frame" x="16" y="57" width="47" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jF6-Q8-j1f">
                                 <rect key="frame" x="16" y="86" width="47" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="9qQ-yh-IDW" userLabel="GreenSlider">
                                 <rect key="frame" x="69" y="53" width="517" height="31"/>
@@ -367,7 +400,22 @@
                                     <constraint firstItem="Ie7-D0-v7l" firstAttribute="height" secondItem="alL-29-eNP" secondAttribute="height" id="vqO-EO-uaW"/>
                                     <constraint firstAttribute="trailing" secondItem="eMU-ww-QgR" secondAttribute="trailing" constant="20" symbolic="YES" id="xzh-8I-xVb"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Lk-g0-GYI">
+                                <rect key="frame" x="538" y="228" width="48" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Pkd-ma-plH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -381,7 +429,9 @@
                             <constraint firstItem="MjG-BE-IJg" firstAttribute="top" secondItem="eMF-rH-BaJ" secondAttribute="bottom" id="IWR-fL-cCw"/>
                             <constraint firstItem="l21-mp-wgn" firstAttribute="leading" secondItem="ouL-ZZ-7U0" secondAttribute="trailing" constant="8" symbolic="YES" id="In5-nP-JZW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eMF-rH-BaJ" secondAttribute="trailing" id="LXc-V5-YHg"/>
+                            <constraint firstItem="4Lk-g0-GYI" firstAttribute="top" secondItem="MjG-BE-IJg" secondAttribute="bottom" constant="8" id="PMU-Pu-Ow7"/>
                             <constraint firstItem="472-0k-eja" firstAttribute="leading" secondItem="jF6-Q8-j1f" secondAttribute="leading" id="Sf0-6H-fcx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4Lk-g0-GYI" secondAttribute="trailing" constant="-2" id="TTW-wv-eCf"/>
                             <constraint firstItem="a2p-HQ-jiT" firstAttribute="leading" secondItem="ouL-ZZ-7U0" secondAttribute="leading" id="Tw4-Gl-hpG"/>
                             <constraint firstItem="9qQ-yh-IDW" firstAttribute="centerY" secondItem="a2p-HQ-jiT" secondAttribute="centerY" id="X3a-wf-CoW"/>
                             <constraint firstItem="9qQ-yh-IDW" firstAttribute="leading" secondItem="a2p-HQ-jiT" secondAttribute="trailing" constant="8" symbolic="YES" id="b5T-LM-Vl6"/>
@@ -407,4 +457,7 @@
             <point key="canvasLocation" x="848" y="503"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fr3-Y5-tBd"/>
+    </inferredMetricsTieBreakers>
 </document>

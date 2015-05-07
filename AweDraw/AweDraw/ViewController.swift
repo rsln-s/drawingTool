@@ -31,6 +31,10 @@ class ViewController: UIViewController {
             self.myDrawView.setNeedsDisplay()
         }
     }
+    @IBAction func clearButtonPressed(sender: UIButton) {
+        EntireDrawing.sharedHistory().drawingHistory.removeAll(keepCapacity: false)
+        self.myDrawView.setNeedsDisplay()
+    }
     
     @IBAction func panHappened(recogniser: UIPanGestureRecognizer) {
         var startingPoint = recogniser.locationInView(self.view)
